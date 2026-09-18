@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh" data-title-zh="在线查询 | 同城快递 TCD EXPRESS 运单查询与运费试算" data-title-en="Track &amp; Quote | TCD Express China–Philippines Shipping">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>在线查询 | 同城快递 TCD EXPRESS 运单查询与运费试算</title>
+<!-- 上线前请把 __SITE_URL__ 替换为真实域名 -->
+<link rel="canonical" href="https://__SITE_URL__/query.html">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<meta name="description" content="同城快递在线查询：输入运单号查看中国到菲律宾的物流轨迹，用运费试算器按体积重（长×宽×高÷6000）估算空运 420P/KG 与海运 150/130/100P/KG 价格，并速查 MAKATI、PASAY、BGC、MANDALUYONG、PARANAQUE 免费派送区域。">
+<meta name="keywords" content="菲律宾专线运单查询,中菲物流运费试算,体积重计算,MAKATI 免费派送,TCD Express 物流查询">
+<meta property="og:type" content="website">
+<meta property="og:title" content="在线查询 | 同城快递 TCD EXPRESS">
+<meta property="og:description" content="运单轨迹查询 · 运费试算器 · 派送区域与时效速查。">
+<meta property="og:url" content="https://__SITE_URL__/query.html">
+<meta property="og:image" content="https://__SITE_URL__/assets/img/logo-full.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== 顶部联系条 ===== -->
+<div class="tcd-topbar">
+  <div class="tcd-container tcd-topbar__inner">
+    <ul class="tcd-topbar__list">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+        <span class="t-zh">微信客服</span><span class="t-en">WeChat</span>
+        <a href="contact.html#wechat">TONGCHENGKD2018</a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        <span class="t-zh">客服飞机</span><span class="t-en">Telegram</span>
+        <a href="https://t.me/TCKD2018" target="_blank" rel="noopener">@TCKD2018</a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="t-zh">菲仓库电话</span><span class="t-en">PH Warehouse</span>
+        <a href="tel:+639163977555">0916 397 7555</a>
+      </li>
+    </ul>
+    <span class="tcd-topbar__badge">
+      <i class="tcd-dot" aria-hidden="true"></i>
+      <span class="t-zh">中菲同时区（UTC+8）· 中文客服在线</span>
+      <span class="t-en">Same time zone as China (UTC+8) · Chinese support online</span>
+    </span>
+  </div>
+</div>
+
+<!-- ===== 页头 ===== -->
+<header class="tcd-header">
+  <div class="tcd-container tcd-header__inner">
+    <a class="tcd-logo" href="index.html" aria-label="同城快递 TCD EXPRESS">
+      <img src="assets/img/logo-lockup.png" alt="同城快递 TCD EXPRESS 品牌标识" width="555" height="130">
+    </a>
+    <nav class="tcd-nav" aria-label="主导航">
+      <a class="tcd-nav__link" href="index.html"><span class="t-zh">首页</span><span class="t-en">Home</span></a>
+      <a class="tcd-nav__link" href="index.html#price"><span class="t-zh">价格与规则</span><span class="t-en">Pricing</span></a>
+      <a class="tcd-nav__link is-active" href="query.html"><span class="t-zh">在线查询</span><span class="t-en">Track &amp; Quote</span></a>
+      <a class="tcd-nav__link" href="process.html"><span class="t-zh">发货流程</span><span class="t-en">Shipping Steps</span></a>
+      <a class="tcd-nav__link" href="faq.html"><span class="t-zh">常见问题</span><span class="t-en">FAQ</span></a>
+      <a class="tcd-nav__link" href="about.html"><span class="t-zh">关于我们</span><span class="t-en">About</span></a>
+      <a class="tcd-nav__link" href="contact.html"><span class="t-zh">联系我们</span><span class="t-en">Contact</span></a>
+    </nav>
+    <div class="tcd-header__actions">
+      <div class="tcd-lang" role="group" aria-label="语言 / Language">
+        <button type="button" data-lang-btn="zh" class="is-on">中文</button>
+        <button type="button" data-lang-btn="en">EN</button>
+      </div>
+      <a class="tcd-btn tcd-btn--primary tcd-btn--sm" href="#quote"><span class="t-zh">去试算运费</span><span class="t-en">Estimate cost</span></a>
+      <button type="button" class="tcd-burger" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <div class="tcd-mobile">
+    <div class="tcd-container">
+      <a class="tcd-mobile__link" href="index.html"><span class="t-zh">首页</span><span class="t-en">Home</span></a>
+      <a class="tcd-mobile__link" href="index.html#price"><span class="t-zh">价格与规则</span><span class="t-en">Pricing &amp; Rules</span></a>
+      <a class="tcd-mobile__link" href="query.html"><span class="t-zh">在线查询</span><span class="t-en">Track &amp; Quote</span></a>
+      <a class="tcd-mobile__link" href="process.html"><span class="t-zh">发货流程与注意事项</span><span class="t-en">Shipping Steps</span></a>
+      <a class="tcd-mobile__link" href="faq.html"><span class="t-zh">常见问题</span><span class="t-en">FAQ</span></a>
+      <a class="tcd-mobile__link" href="about.html"><span class="t-zh">关于我们</span><span class="t-en">About Us</span></a>
+      <a class="tcd-mobile__link" href="contact.html"><span class="t-zh">联系我们</span><span class="t-en">Contact Us</span></a>
+      <div class="tcd-mobile__cta">
+        <a class="tcd-btn tcd-btn--primary" href="https://t.me/TCKD2018" target="_blank" rel="noopener">Telegram @TCKD2018</a>
+        <a class="tcd-btn tcd-btn--ghost" href="tel:+639163977555">0916 397 7555</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== 内页首屏 ===== -->
+  <section class="tcd-pagehero">
+    <div class="tcd-container tcd-pagehero__inner">
+      <nav class="tcd-crumb" aria-label="面包屑">
+        <a href="index.html"><span class="t-zh">首页</span><span class="t-en">Home</span></a>
+        <span aria-hidden="true">/</span>
+        <span><span class="t-zh">在线查询</span><span class="t-en">Track &amp; Quote</span></span>
+      </nav>
+      <h1><span class="t-zh">运单查询与运费试算</span><span class="t-en">Track your parcel and estimate the cost</span></h1>
+      <p>
+        <span class="t-zh">发货后想在手机上随时看进度，或者在寄之前先算一算要花多少钱？这里三个小工具够用：<strong>查轨迹</strong>、<strong>算运费</strong>、<strong>查免费派送区域</strong>。算出来的数字是预估，最终以仓库复重与客服确认为准。</span>
+        <span class="t-en">Want to follow your parcel from your phone, or work out the cost before you ship? Three quick tools: <strong>track a shipment</strong>, <strong>estimate the freight</strong> and <strong>check whether your area gets free delivery</strong>. Estimates only — the final figure follows the warehouse re-weigh and our confirmation.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 运单查询 ===== -->
+  <section class="tcd-section" id="track">
+    <div class="tcd-container">
+      <div class="tcd-section__head">
+        <span class="tcd-eyebrow"><span class="t-zh">工具一 · 运单查询</span><span class="t-en">Tool 1 · Track a shipment</span></span>
+        <h2><span class="t-zh">输入国内快递单号，看货走到哪了</span><span class="t-en">Enter your domestic courier number</span></h2>
+        <p class="tcd-lead">
+          <span class="t-zh">把你寄件时拿到的<strong>国内快递单号</strong>（顺丰 / 中通 / 圆通 / 韵达等）填进去、点查询，系统会到我们的运单表里找这票货；找到了就返回它当前的状态：<strong>国内仓库签收 → 国内发货 → 已发出在途 → 菲律宾到仓 → 打包待派送</strong>。查询结果<strong>只显示物流状态</strong>，不含收件人和货物信息。</span>
+          <span class="t-en">Enter the <strong>domestic courier number</strong> you got when shipping (SF / ZTO / YTO / YD…), hit search, and we look it up in our shipment sheet. On a match you get its current status: <strong>received at the China warehouse → dispatched → in transit → arrived at the PH warehouse → packed for delivery</strong>. Results are <strong>status only</strong> — never recipient or cargo.</span>
+        </p>
+      </div>
+
+      <div class="tcd-tool">
+        <div class="tcd-tool__head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <h3><span class="t-zh">运单号查询</span><span class="t-en">Tracking lookup</span></h3>
+          <span class="tcd-badge"><span class="t-zh">国内快递单号查询</span><span class="t-en">Domestic courier lookup</span></span>
+        </div>
+        <div class="tcd-tool__body">
+          <form id="tcdTrackForm" class="tcd-track-input" autocomplete="off">
+            <label class="tcd-sr" for="tcdTrackInput"><span class="t-zh">国内快递单号</span><span class="t-en">Domestic courier number</span></label>
+            <input class="tcd-input tcd-input--mono" type="text" id="tcdTrackInput" placeholder="例如 SF1234567890123" inputmode="text">
+            <button class="tcd-btn tcd-btn--primary" type="submit">
+              <span class="t-zh">查询轨迹</span><span class="t-en">Track now</span>
+            </button>
+          </form>
+          <p id="tcdTrackHint" style="margin:8px 2px 0;color:var(--tcd-muted);font-size:13px">
+            <span class="t-zh">支持顺丰 / 中通 / 圆通 / 韵达等各家国内快递单号；货到仓后客服给你的 <strong>TCD 运单号</strong>也可以直接查。</span>
+            <span class="t-en">Works with any domestic courier number (SF / ZTO / YTO / YD…); the <strong>TCD tracking number</strong> issued after warehousing works too.</span>
+          </p>
+
+          <div class="tcd-result" id="tcdTrackResult" hidden>
+            <div class="tcd-result__head">
+              <span><span class="t-zh">查询单号</span><span class="t-en">Queried no.</span></span>
+              <span class="tcd-track__num" id="tcdTrackNum"></span>
+              <span class="tcd-badge" id="tcdTrackTag"></span>
+            </div>
+            <div class="tcd-result__notice" id="tcdTrackNotice" hidden></div>
+            <ol class="tcd-steps" id="tcdTrackSteps" hidden></ol>
+            <div class="tcd-result__rows" id="tcdTrackMeta">
+              <div class="tcd-result__row"><span><span class="t-zh">最新节点</span><span class="t-en">Latest node</span></span><b id="tcdTrackLatest"></b></div>
+              <div class="tcd-result__row"><span><span class="t-zh">更新时间</span><span class="t-en">Updated</span></span><b id="tcdTrackTime"></b></div>
+            </div>
+            <ul class="tcd-track__list" id="tcdTrackList"></ul>
+          </div>
+
+          <div class="tcd-note tcd-note--info" style="margin-top:22px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <span>
+              <span class="t-zh"><strong>隐私保护：</strong>查询结果来自同城快递后台，<strong>每次只返回你查询的那一条记录</strong>，且<strong>只显示物流状态</strong>——收件人姓名与货物信息一律不对外展示，避免被他人冒领。查不到时请核对单号，或加微信 TONGCHENGKD2018 人工查询。</span>
+              <span class="t-en"><strong>Privacy:</strong> results come from TCD's backend and <strong>only the one record you queried is ever returned</strong>, showing <strong>logistics status only</strong> — the recipient's name and cargo details are never displayed, preventing fraudulent collection. If nothing shows up, check the number or message TONGCHENGKD2018 on WeChat.</span>
+            </span>
+          </div>
+
+          <p style="margin-top:20px;color:var(--tcd-muted);font-size:14.5px">
+            <span class="t-zh">查不到、或者到了派送环节想催件？直接加微信 <strong>TONGCHENGKD2018</strong>，把运单号发过来，客服人工帮你查菲律宾仓的分拣进度。</span>
+            <span class="t-en">Cannot find it, or want to chase a delivery? Message <strong>TONGCHENGKD2018</strong> on WeChat with your tracking number and our team will check the Manila warehouse for you.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 运费试算器 ===== -->
+  <section class="tcd-section tcd-section--alt" id="quote">
+    <div class="tcd-container">
+      <div class="tcd-section__head">
+        <span class="tcd-eyebrow"><span class="t-zh">工具二 · 运费试算</span><span class="t-en">Tool 2 · Cost estimator</span></span>
+        <h2><span class="t-zh">填箱规和重量，先算出大概多少钱</span><span class="t-en">Enter carton size and weight for a rough cost</span></h2>
+        <p class="tcd-lead">
+          <span class="t-zh">计费按<strong>实际重量与体积重取大者</strong>。体积重 = 长 × 宽 × 高 ÷ 6000（厘米制），所以轻飘飘的大箱子，往往按体积重收费。</span>
+          <span class="t-en">We charge on <strong>the greater of actual weight and volumetric weight</strong>. Volumetric weight = L × W × H ÷ 6000 (in cm), so a big but light carton is usually billed on volume.</span>
+        </p>
+      </div>
+
+      <div class="tcd-tool">
+        <div class="tcd-tool__head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M8 10h3"/><path d="M8 14h3"/><path d="M8 18h3"/><path d="M15 14h1"/><path d="M15 18h1"/></svg>
+          <h3><span class="t-zh">运费试算器</span><span class="t-en">Freight estimator</span></h3>
+          <span class="tcd-badge"><span class="t-zh">单位：菲律宾比索 P</span><span class="t-en">Currency: PHP (P)</span></span>
+        </div>
+        <div class="tcd-tool__body">
+
+          <form id="tcdQuoteForm" class="tcd-tool__grid tcd-tool__grid--3">
+            <div class="tcd-field">
+              <label class="tcd-field__k" for="tcdQPieces"><span class="t-zh">件数 <small>（外箱数量）</small></span><span class="t-en">Cartons <small>(how many boxes)</small></span></label>
+              <input class="tcd-input" type="number" id="tcdQPieces" min="1" step="1" value="1" inputmode="numeric">
+            </div>
+            <div class="tcd-field">
+              <label class="tcd-field__k" for="tcdQLength"><span class="t-zh">单箱长 CM</span><span class="t-en">Length cm</span></label>
+              <input class="tcd-input" type="number" id="tcdQLength" min="0" step="0.1" placeholder="40" inputmode="decimal">
+            </div>
+            <div class="tcd-field">
+              <label class="tcd-field__k" for="tcdQWidth"><span class="t-zh">单箱宽 CM</span><span class="t-en">Width cm</span></label>
+              <input class="tcd-input" type="number" id="tcdQWidth" min="0" step="0.1" placeholder="30" inputmode="decimal">
+            </div>
+            <div class="tcd-field">
+              <label class="tcd-field__k" for="tcdQHeight"><span class="t-zh">单箱高 CM</span><span class="t-en">Height cm</span></label>
+              <input class="tcd-input" type="number" id="tcdQHeight" min="0" step="0.1" placeholder="30" inputmode="decimal">
+            </div>
+            <div class="tcd-field">
+              <label class="tcd-field__k" for="tcdQWeight"><span class="t-zh">实际总重量 KG</span><span class="t-en">Actual weight, total kg</span></label>
+              <input class="tcd-input" type="number" id="tcdQWeight" min="0" step="0.1" placeholder="4" inputmode="decimal">
+            </div>
+            <div class="tcd-field">
+              <label class="tcd-field__k" for="tcdQValue"><span class="t-zh">货值 P <small>（选填，用于算保价）</small></span><span class="t-en">Declared value P <small>(optional, for insurance)</small></span></label>
+              <input class="tcd-input" type="number" id="tcdQValue" min="0" step="1" placeholder="20000" inputmode="numeric">
+            </div>
+
+            <div class="tcd-field tcd-field--full">
+              <span class="tcd-field__k"><span class="t-zh">运输方式</span><span class="t-en">Service</span></span>
+              <div class="tcd-seg">
+                <label><input type="radio" name="tcdService" value="air" checked><span><span class="t-zh">空运 · 3 天</span><span class="t-en">Air · 3 days</span></span></label>
+                <label><input type="radio" name="tcdService" value="sea"><span><span class="t-zh">海运 · 2 周</span><span class="t-en">Sea · 2 weeks</span></span></label>
+              </div>
+            </div>
+
+            <div class="tcd-field--full" style="display:flex;gap:12px;flex-wrap:wrap">
+              <button class="tcd-btn tcd-btn--primary" type="submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M8 10h3"/><path d="M8 14h3"/><path d="M8 18h3"/></svg>
+                <span class="t-zh">开始试算</span><span class="t-en">Estimate</span>
+              </button>
+              <button class="tcd-btn tcd-btn--ghost" type="reset">
+                <span class="t-zh">清空重填</span><span class="t-en">Clear</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="tcd-result" id="tcdQuoteResult" hidden>
+            <div class="tcd-result__head">
+              <span><span class="t-zh">试算结果（预估）</span><span class="t-en">Estimate (for reference)</span></span>
+              <span class="tcd-badge" id="tcdQtag"></span>
+            </div>
+            <div class="tcd-result__rows" id="tcdQuoteRows">
+              <div class="tcd-result__row">
+                <span><span class="t-zh">箱规</span><span class="t-en">Cartons &amp; size</span></span>
+                <b id="tcdQpieces"></b>
+              </div>
+              <div class="tcd-result__row">
+                <span><span class="t-zh">体积重合计（长×宽×高÷6000）</span><span class="t-en">Volumetric weight (L×W×H÷6000)</span></span>
+                <b id="tcdQvolume"></b>
+              </div>
+              <div class="tcd-result__row">
+                <span><span class="t-zh">实际重量</span><span class="t-en">Actual weight</span></span>
+                <b id="tcdQactual"></b>
+              </div>
+              <div class="tcd-result__row">
+                <span><span class="t-zh">计费重量（两者取大，1 KG 起运）</span><span class="t-en">Chargeable weight (greater of the two, min 1 kg)</span></span>
+                <b id="tcdQbillable"></b>
+              </div>
+              <div class="tcd-result__row">
+                <span><span class="t-zh">单价</span><span class="t-en">Unit rate</span></span>
+                <b id="tcdQunit"></b>
+              </div>
+              <div class="tcd-result__row tcd-result__row--total">
+                <span><span class="t-zh">预估运费</span><span class="t-en">Estimated freight</span></span>
+                <b id="tcdQtotal"></b>
+              </div>
+              <div class="tcd-result__row" id="tcdQinsuranceRow" hidden>
+                <span><span class="t-zh">保价费用（货值 5%）</span><span class="t-en">Insurance (5% of value)</span></span>
+                <b id="tcdQinsurance"></b>
+              </div>
+            </div>
+          </div>
+
+          <div class="tcd-note tcd-note--info" style="margin-top:22px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <span>
+              <span class="t-zh">试算口径说明：空运 <strong>420 P/KG</strong>；海运按整票计费重量取档 —— <strong>1–30 KG 为 150 P/KG、30–50 KG 为 130 P/KG、50 KG 以上为 100 P/KG</strong>。以上均已含双清包税与免费区域派送到门；非免费区域的车费到付，不计入试算结果。</span>
+              <span class="t-en">How we estimate: air at <strong>420 PHP/kg</strong>; sea is tiered on the shipment's chargeable weight — <strong>150 PHP/kg for 1–30 kg, 130 PHP/kg for 30–50 kg, 100 PHP/kg above 50 kg</strong>. Customs clearance, tax and free-zone door delivery are included; ride-hailing fares outside the free zones are paid on delivery and not counted here.</span>
+            </span>
+          </div>
+
+          <p style="margin-top:18px;color:var(--tcd-muted);font-size:14.5px">
+            <span class="t-zh">实际运费以<strong>转运仓复重后的计费重量</strong>为准；如遇旺季附加费、超大超长件或特殊品类，客服会在发货前单独告知。</span>
+            <span class="t-en">The final charge follows the <strong>chargeable weight re-measured at our warehouse</strong>. Peak-season surcharges, oversized items and special categories are quoted separately before dispatch.</span>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 派送区域速查 ===== -->
+  <section class="tcd-section" id="zone">
+    <div class="tcd-container">
+      <div class="tcd-section__head">
+        <span class="tcd-eyebrow"><span class="t-zh">工具三 · 派送区域</span><span class="t-en">Tool 3 · Delivery area</span></span>
+        <h2><span class="t-zh">你的收货地址，免费派送吗？</span><span class="t-en">Is your address inside the free delivery zone?</span></h2>
+        <p class="tcd-lead">
+          <span class="t-zh">马尼拉以下五个区域<strong>免费派送到门</strong>。区域外的地址照样送，只是采用打车配送、<strong>车费由收件人到付</strong>。</span>
+          <span class="t-en">Five Metro Manila areas get <strong>free door delivery</strong>. Everywhere else is still served — by ride-hailing, with the <strong>fare paid by the recipient on delivery</strong>.</span>
+        </p>
+      </div>
+
+      <div class="tcd-tool">
+        <div class="tcd-tool__head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h3><span class="t-zh">区域速查</span><span class="t-en">Area checker</span></h3>
+          <span class="tcd-badge"><span class="t-zh">中英文均可输入</span><span class="t-en">Chinese or English</span></span>
+        </div>
+        <div class="tcd-tool__body">
+          <form id="tcdZoneForm" class="tcd-track-input" autocomplete="off">
+            <label class="tcd-sr" for="tcdZoneInput"><span class="t-zh">收货区域</span><span class="t-en">Delivery area</span></label>
+            <input class="tcd-input" type="text" id="tcdZoneInput" placeholder="MAKATI / Pasay / 马卡蒂 / Quezon City">
+            <button class="tcd-btn tcd-btn--primary" type="submit">
+              <span class="t-zh">查一查</span><span class="t-en">Check</span>
+            </button>
+          </form>
+
+          <div class="tcd-answer" id="tcdZoneAnswer" hidden></div>
+
+          <div class="tcd-zones" style="margin-top:26px">
+            <span class="tcd-zone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              MAKATI
+            </span>
+            <span class="tcd-zone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              PASAY
+            </span>
+            <span class="tcd-zone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              BGC
+            </span>
+            <span class="tcd-zone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              MANDALUYONG
+            </span>
+            <span class="tcd-zone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              PARANAQUE
+            </span>
+          </div>
+
+          <div class="tcd-note tcd-note--info" style="margin-top:22px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <span>
+              <span class="t-zh">速查结果只是初步判断（同名街区、跨区边界地址可能判错）。下单前把<strong>完整收货地址</strong>发给客服确认一次，最稳妥。</span>
+              <span class="t-en">This checker is a rough guide — street names repeat and boundaries overlap. Send us the <strong>full delivery address</strong> before shipping and we will confirm the zone for you.</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 时效与运力速查 ===== -->
+  <section class="tcd-section tcd-section--alt" id="leadtime">
+    <div class="tcd-container">
+      <div class="tcd-section__head">
+        <span class="tcd-eyebrow"><span class="t-zh">速查表</span><span class="t-en">At a glance</span></span>
+        <h2><span class="t-zh">空运还是海运？一张表看完</span><span class="t-en">Air or sea — the whole comparison</span></h2>
+        <p class="tcd-lead">
+          <span class="t-zh">急件、样品、小件补货走空运；大件、重货、不急的走海运。两边都含双清包税与送货到门。</span>
+          <span class="t-en">Urgent parcels, samples and small restocks go by air. Bulky, heavy or non-urgent cargo goes by sea. Both include customs clearance, tax and door delivery.</span>
+        </p>
+      </div>
+
+      <div class="tcd-tablewrap" style="background:#fff;border:1px solid var(--tcd-line);border-radius:20px;padding:6px 0;box-shadow:var(--tcd-shadow)">
+        <table class="tcd-table">
+          <caption class="tcd-sr"><span class="t-zh">空运与海运对比</span><span class="t-en">Air vs sea comparison</span></caption>
+          <thead>
+            <tr>
+              <th scope="col"><span class="t-zh">对比项</span><span class="t-en">Item</span></th>
+              <th scope="col"><span class="t-zh">空运专线</span><span class="t-en">Air</span></th>
+              <th scope="col"><span class="t-zh">海运专线</span><span class="t-en">Sea</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="t-zh">到达时效</span><span class="t-en">Transit time</span></td>
+              <td><span class="t-zh">3 天到菲</span><span class="t-en">3 days to PH</span></td>
+              <td><span class="t-zh">2 周到菲</span><span class="t-en">2 weeks to PH</span></td>
+            </tr>
+            <tr>
+              <td><span class="t-zh">出运频次</span><span class="t-en">Departures</span></td>
+              <td><span class="t-zh">一周六次航班</span><span class="t-en">Six flights a week</span></td>
+              <td><span class="t-zh">每周三发货</span><span class="t-en">Every Wednesday</span></td>
+            </tr>
+            <tr>
+              <td><span class="t-zh">起运重量</span><span class="t-en">Minimum</span></td>
+              <td><span class="t-zh">1 KG 起寄</span><span class="t-en">From 1 kg</span></td>
+              <td><span class="t-zh">1 KG 起寄</span><span class="t-en">From 1 kg</span></td>
+            </tr>
+            <tr>
+              <td><span class="t-zh">价格</span><span class="t-en">Rate</span></td>
+              <td><span class="tcd-table__price">420 <em>P/KG</em></span></td>
+              <td><span class="tcd-table__price">150 / 130 / 100 <em>P/KG 阶梯</em></span></td>
+            </tr>
+            <tr>
+              <td><span class="t-zh">计费重量</span><span class="t-en">Chargeable weight</span></td>
+              <td><span class="t-zh">实际重与体积重取大</span><span class="t-en">Greater of actual / volumetric</span></td>
+              <td><span class="t-zh">实际重与体积重取大</span><span class="t-en">Greater of actual / volumetric</span></td>
+            </tr>
+            <tr>
+              <td><span class="t-zh">清关与税费</span><span class="t-en">Customs &amp; tax</span></td>
+              <td><span class="t-zh">双清包税</span><span class="t-en">Cleared, tax included</span></td>
+              <td><span class="t-zh">双清包税</span><span class="t-en">Cleared, tax included</span></td>
+            </tr>
+            <tr>
+              <td><span class="t-zh">派送到门</span><span class="t-en">Door delivery</span></td>
+              <td><span class="t-zh">五大区域免费</span><span class="t-en">Free in 5 areas</span></td>
+              <td><span class="t-zh">五大区域免费</span><span class="t-en">Free in 5 areas</span></td>
+            </tr>
+            <tr>
+              <td><span class="t-zh">适合什么货</span><span class="t-en">Best for</span></td>
+              <td><span class="t-zh">急件、样品、小件补货、贵重品</span><span class="t-en">Urgent items, samples, small restocks, valuables</span></td>
+              <td><span class="t-zh">大件、重货、体积大但不急的货</span><span class="t-en">Bulky, heavy or non-urgent cargo</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tcd-note" style="margin-top:24px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+        <span>
+          <span class="t-zh"><strong>时效起算点：</strong>从货物在中国转运仓<strong>签收</strong>那天开始算，不含签收当天；节假日、台风季、清关抽查可能顺延。想知道当周的具体航班与船期，问客服最快。</span>
+          <span class="t-en"><strong>When the clock starts:</strong> from the day your goods are <strong>received</strong> at our China warehouse, excluding that day. Public holidays, typhoon season and customs inspections can add time. Ask our team for this week's flight and sailing schedule.</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="tcd-cta">
+    <div class="tcd-container tcd-cta__inner">
+      <div>
+        <h2><span class="t-zh">算完不确定？直接把货的信息发我们</span><span class="t-en">Not sure about the number? Send us the details</span></h2>
+        <p>
+          <span class="t-zh">把品类、箱规、重量和菲律宾收货区域发过来，客服给你一份含时效的最终报价，比试算更准。</span>
+          <span class="t-en">Send the cargo type, carton size, weight and delivery area, and we will come back with a final quote including transit time.</span>
+        </p>
+      </div>
+      <div class="tcd-cta__actions">
+        <a class="tcd-btn tcd-btn--accent tcd-btn--lg" href="contact.html#wechat"><span class="t-zh">加微信问客服</span><span class="t-en">Message us on WeChat</span></a>
+        <a class="tcd-btn tcd-btn--light tcd-btn--lg" href="process.html"><span class="t-zh">看发货流程</span><span class="t-en">See how to ship</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer class="tcd-footer">
+  <div class="tcd-container">
+    <div class="tcd-footer__grid">
+      <div>
+        <img class="tcd-footer__logo" src="assets/img/logo-lockup-white.png" alt="同城快递 TCD EXPRESS" width="555" height="130">
+        <p>
+          <span class="t-zh">同城快递·专注于中国到菲律宾的专线物流。空运 3 天到菲、海运 2 周到菲，一公斤起运、双清包税、送货到门，全程中文客服。</span>
+          <span class="t-en">TCD Express focuses on the China–Philippines lane. Air in 3 days, sea in 2 weeks, from 1 kg, customs cleared and tax paid, delivered to your door, with Chinese-speaking support.</span>
+        </p>
+      </div>
+      <div>
+        <h4><span class="t-zh">快速导航</span><span class="t-en">Quick links</span></h4>
+        <ul>
+          <li><a href="index.html#price"><span class="t-zh">价格与配送规则</span><span class="t-en">Pricing &amp; rules</span></a></li>
+          <li><a href="query.html"><span class="t-zh">运单查询与试算</span><span class="t-en">Track &amp; quote</span></a></li>
+          <li><a href="process.html"><span class="t-zh">发货流程</span><span class="t-en">Shipping steps</span></a></li>
+          <li><a href="faq.html"><span class="t-zh">常见问题</span><span class="t-en">FAQ</span></a></li>
+          <li><a href="about.html"><span class="t-zh">关于我们</span><span class="t-en">About us</span></a></li>
+          <li><a href="contact.html"><span class="t-zh">联系我们</span><span class="t-en">Contact us</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="t-zh">服务通道</span><span class="t-en">Services</span></h4>
+        <ul>
+          <li><a href="index.html#price"><span class="t-zh">空运专线 420P/KG</span><span class="t-en">Air freight 420 PHP/KG</span></a></li>
+          <li><a href="index.html#price"><span class="t-zh">海运专线 100P/KG 起</span><span class="t-en">Sea freight from 100 PHP/KG</span></a></li>
+          <li><a href="about.html"><span class="t-zh">海外仓一件代发</span><span class="t-en">Warehouse drop-shipping</span></a></li>
+          <li><a href="process.html#insurance"><span class="t-zh">贵重物品保价</span><span class="t-en">Cargo insurance</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="t-zh">联系方式</span><span class="t-en">Contact</span></h4>
+        <ul class="tcd-footer__contact">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            <span><span class="t-zh">客服微信：</span><span class="t-en">WeChat: </span>TONGCHENGKD2018</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            <span><span class="t-zh">客服飞机：</span><span class="t-en">Telegram: </span><a href="https://t.me/TCKD2018" target="_blank" rel="noopener">@TCKD2018</a></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span><span class="t-zh">菲仓库电话：</span><span class="t-en">PH warehouse: </span><a href="tel:+639163977555">0916 397 7555</a></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><span class="t-zh">菲律宾·马尼拉（自营仓）</span><span class="t-en">Manila, Philippines (own warehouse)</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="tcd-footer__bottom">
+      <span>
+        <span class="t-zh">© 2026 同城快递 TCD EXPRESS · 中国–菲律宾专线物流</span>
+        <span class="t-en">© 2026 TCD Express · China–Philippines dedicated freight</span>
+      </span>
+      <span>
+        <span class="t-zh">空运 3 天到菲 · 海运 2 周到菲 · 双清包税 · 送货到门</span>
+        <span class="t-en">Air 3 days · Sea 2 weeks · customs cleared · door delivery</span>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JSON-LD：Organization + 面包屑 ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "同城快递",
+      "alternateName": "TCD EXPRESS",
+      "url": "https://__SITE_URL__/",
+      "logo": "https://__SITE_URL__/assets/img/logo-full.png",
+      "description": "同城快递（TCD EXPRESS）专注中国到菲律宾专线物流，提供空运、海运、小包与海外仓服务，在线支持运单查询与运费试算。",
+      "address": { "@type": "PostalAddress", "addressLocality": "Manila", "addressCountry": "PH" },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+63-916-397-7555",
+          "availableLanguage": ["Chinese", "English"],
+          "areaServed": "PH"
+        }
+      ],
+      "sameAs": ["https://t.me/TCKD2018"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://__SITE_URL__/" },
+        { "@type": "ListItem", "position": 2, "name": "在线查询", "item": "https://__SITE_URL__/query.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="assets/js/main.js"></script>
+<style>.tcd-topbar,.tcd-header,.tcd-pagehero,#quote,#zone,#leadtime,.tcd-cta,.tcd-footer{display:none !important}main{padding-top:0 !important}section.tcd-section{padding:16px 0 !important}</style><script>
+window.addEventListener('DOMContentLoaded', function(){ setTimeout(function(){
+  var i=document.getElementById('tcdTrackInput');
+  if(i){ i.value='YT5566778899';
+    document.getElementById('tcdTrackForm').dispatchEvent(new Event('submit',{cancelable:true,bubbles:true}));
+  }
+}, 600); });
+</script>
+</body>
+</html>
