@@ -4,7 +4,9 @@
   "private": true,
   "description": "TCD EXPRESS 网站 + 安全运单查询接口（Google Sheets 数据源）",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev:worker": "npx wrangler dev",
+    "deploy:worker": "npx wrangler deploy"
   },
   "dependencies": {
     "express": "^4.19.2",

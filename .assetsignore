@@ -1,0 +1,35 @@
+# Source control / local files
+.git/
+.github/
+.gitignore
+.gitattributes
+.DS_Store
+
+# Dependencies / local environment
+node_modules/
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+.wrangler/
+
+# Private / server-side data
+data/
+
+# Server / Worker source and deployment config
+server.js
+worker.mjs
+wrangler.jsonc
+package.json
+package-lock.json
+.assetsignore
+
+# Local audit/test helpers
+_audit.py
+_check.py
+_probe_ov.html
+_v_noTcd.html
+_wrap.html
+
+# Misc source/debug files
+*.py
