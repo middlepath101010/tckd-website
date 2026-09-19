@@ -1,2 +1,5 @@
 node_modules/
 .DS_Store
+
+# 私有数据：仅本地与后端使用，禁止入库（.assetsignore 另已阻止其被部署）
+data/
