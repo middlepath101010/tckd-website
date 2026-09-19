@@ -206,6 +206,45 @@ for page in PAGES:
         if ('href="%s"' % other) not in raw:
             problems.append("%s: 缺少指向 %s 的链接" % (page, other))
 
+# ---- SEO：canonical / hreflang 自洽与中英互链（2026-09-20 增） ----
+# 血泪教训：构建脚本曾把 hreflang 全部写成 https://feisugo.com/False.html，
+# 中英配对彻底失效但页面照常能看，肉眼查不出来。此处强制体检。
+SEO_BASE = "https://feisugo.com/"
+
+
+def seo_slugs(rel):
+    """由文件相对路径推出 (中文 slug, 英文 slug)，index 视为目录根。"""
+    if rel.startswith("en/"):
+        name = rel[3:]
+        return ("" if name == "index.html" else name,
+                "en/" if name == "index.html" else "en/" + name)
+    return ("" if rel == "index.html" else rel,
+            "en/" if rel == "index.html" else "en/" + rel)
+
+
+for rel in PAGES + ["en/" + p for p in PAGES]:
+    path = os.path.join(ROOT, rel)
+    if not os.path.exists(path):
+        problems.append("SEO: 缺少页面 %s" % rel)
+        continue
+    raw = open(path, encoding="utf-8").read()
+    zh_slug, en_slug = seo_slugs(rel)
+    zh_url, en_url = SEO_BASE + zh_slug, SEO_BASE + en_slug
+    self_url = en_url if rel.startswith("en/") else zh_url
+    want = {
+        "canonical": '<link rel="canonical" href="%s">' % self_url,
+        "hreflang zh-CN": '<link rel="alternate" hreflang="zh-CN" href="%s">' % zh_url,
+        "hreflang en": '<link rel="alternate" hreflang="en" href="%s">' % en_url,
+        "hreflang x-default": '<link rel="alternate" hreflang="x-default" href="%s">' % en_url,
+    }
+    for key, needle in want.items():
+        if needle not in raw:
+            problems.append("SEO: %s 的 %s 不正确，应为 %s" % (rel, key, needle))
+    if "__SITE_URL__" in raw:
+        problems.append("SEO: %s 仍残留 __SITE_URL__ 占位" % rel)
+    if "False.html" in raw or "None.html" in raw:
+        problems.append("SEO: %s 存在构建脚本残留链接" % rel)
+
 print("检查页面：%s" % ", ".join(PAGES))
 if problems:
     print("\n发现 %d 个问题：" % len(problems))
