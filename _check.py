@@ -8,11 +8,10 @@ import sys
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-PAGES = ["index.html", "query.html", "process.html", "pricing.html", "about.html", "faq.html", "contact.html"]
-# query.html（在线查询）自 2026-09-19 起撤掉了公开入口：页头导航、移动菜单、页脚
-# 站点地图都不再链向它，只保留页面本身供内部访问。因此它不参与「每页都要互链」
-# 的检查，否则会一直误报「缺少指向 query.html 的链接」。
-NO_PUBLIC_ENTRY = {"query.html"}
+PAGES = ["index.html", "process.html", "pricing.html", "about.html", "faq.html", "contact.html"]
+# 站点自 2026-09-20 起为纯静态展示站：运单查询功能（含 /api/track 后端、data/ 私有数据）
+# 与运费试算页（query.html）已彻底移除，不再参与导航互链与 SEO 体检。
+NO_PUBLIC_ENTRY = set()
 
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta",
         "param", "source", "track", "wbr"}

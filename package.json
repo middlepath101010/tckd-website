@@ -2,14 +2,10 @@
   "name": "tcd-express-site",
   "version": "1.0.0",
   "private": true,
-  "description": "TC EXPRESS 网站 + 安全运单查询接口（Google Sheets 数据源）",
+  "description": "TC EXPRESS 纯静态展示官网（中菲物流专线）",
   "scripts": {
-    "start": "node server.js",
+    "start": "python3 -m http.server 8080",
     "dev:worker": "npx wrangler dev",
     "deploy:worker": "npx wrangler deploy"
-  },
-  "dependencies": {
-    "express": "^4.19.2",
-    "google-spreadsheet": "^4.1.1"
   }
 }

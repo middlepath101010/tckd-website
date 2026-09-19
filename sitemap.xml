@@ -34,22 +34,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://feisugo.com/query.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://feisugo.com/query.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://feisugo.com/en/query.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://feisugo.com/en/query.html"/>
-    <lastmod>2026-09-20</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://feisugo.com/en/query.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://feisugo.com/query.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://feisugo.com/en/query.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://feisugo.com/en/query.html"/>
-    <lastmod>2026-09-20</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://feisugo.com/process.html</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://feisugo.com/process.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://feisugo.com/en/process.html"/>
