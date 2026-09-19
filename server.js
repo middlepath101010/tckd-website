@@ -1,12 +1,12 @@
 'use strict';
 
 /**
- * TCD EXPRESS · 网站 + 安全运单查询接口
+ * TC EXPRESS · 网站 + 安全运单查询接口
  *
  * 职责：
  *   1) 托管 site/ 下的静态网站（index.html / query.html / assets …）
  *   2) 提供 GET /api/track?no=单号
- *        - 用「国内快递单号」或「TCD 运单号」查询，二者指向同一票货
+ *        - 用「国内快递单号」或「TC 运单号」查询，二者指向同一票货
  *        - 只返回物流状态（状态 / 最新节点 / 更新时间 / 轨迹节点），
  *          绝不返回收件人与货物（冒领三件套，永不外泄）
  *        - 后端只回传命中的那一行，绝不返回整张表（防批量扒数据）
@@ -19,7 +19,7 @@
  *
  * 谷歌表格列（首行表头）：
  *   运单号, 国内快递公司, 国内快递单号, 状态, 最新节点, 更新时间, 收件人, 货物, 轨迹
- *   - 运单号 可空：货物还没到仓、尚未分配 TCD 号时，用「国内快递单号」查询
+ *   - 运单号 可空：货物还没到仓、尚未分配 TC 号时，用「国内快递单号」查询
  *   - 收件人 / 货物 仅作内部作业使用，接口一律不返回
  *   - 「轨迹」列每行为一个节点，格式：时间 || 节点描述（换行分隔多个节点）
  */
@@ -82,7 +82,7 @@ function normalize(r) {
     }
     return '';
   };
-  // 主键可以是 TCD 运单号，也可以是国内快递单号（货物还没到仓、尚未分配 TCD 号时用）
+  // 主键可以是 TC 运单号，也可以是国内快递单号（货物还没到仓、尚未分配 TC 号时用）
   const no = get(['运单号', 'tracking_no', 'TrackingNo', 'tracking']);
   const domesticNo = get(['国内快递单号', 'domestic_no', 'domestic', '快递单号']);
   if (!no && !domesticNo) return null;
@@ -165,7 +165,7 @@ app.get('/api/track', async (req, res) => {
   try {
     const rows = await loadRows();
 
-    // 「国内快递单号」与「TCD 运单号」指向同一票货，任一命中即可
+    // 「国内快递单号」与「TC 运单号」指向同一票货，任一命中即可
     const hit = rows.find(
       (r) =>
         (r.no && r.no.toUpperCase() === noRaw.toUpperCase()) ||
@@ -195,5 +195,5 @@ app.use(express.static(PUBLIC_DIR, { extensions: ['html'] }));
 app.use((req, res) => res.status(404).send('Not found'));
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log('TCD EXPRESS site listening on http://0.0.0.0:' + PORT);
+  console.log('TC EXPRESS site listening on http://0.0.0.0:' + PORT);
 });

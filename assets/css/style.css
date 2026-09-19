@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* ==========================================================================
-   同城快递 TCD EXPRESS · 中国-菲律宾专线  |  全站样式表
+   同城快递 TC EXPRESS · 中国-菲律宾专线  |  全站样式表
    前缀 tcd- 保证类名唯一，便于后续移植到建站系统而不影响其它页面
    品牌主色取自 logo：蓝 #0072C6（渐变 #0868B8 → #0080D8）
    ========================================================================== */
@@ -665,21 +665,26 @@ button { font: inherit; cursor: pointer; }
 .tcd-result__head .tcd-track__num { font-family: var(--tcd-mono); }
 .tcd-result__rows { display: grid; }
 .tcd-result__rows[hidden] { display: none; }
-.tcd-steps {
+/* 运单查询结果里的「进度条」（5 阶段节点）。
+   ⚠️ 历史坑：这里以前也叫 .tcd-steps / .tcd-step，与第 10 节「三步发货」卡片同名。
+   本段在样式表中更靠后，会整体覆盖卡片样式（display 由 grid 变 flex），
+   导致 process.html 三张卡片正文被挤成逐字竖排。故改用 tcd-track* 前缀彻底隔离，
+   以后加回运单查询时 HTML 请用 .tcd-tracksteps / .tcd-trackstep / __n / __k。 */
+.tcd-tracksteps {
   display: flex; gap: 6px; list-style: none; margin: 0; padding: 14px 20px;
   border-bottom: 1px solid var(--tcd-line); flex-wrap: wrap;
 }
-.tcd-steps[hidden] { display: none; }
-.tcd-step { display: flex; align-items: center; gap: 8px; flex: 1 1 130px; min-width: 130px; }
-.tcd-step__n {
+.tcd-tracksteps[hidden] { display: none; }
+.tcd-trackstep { display: flex; align-items: center; gap: 8px; flex: 1 1 130px; min-width: 130px; }
+.tcd-trackstep__n {
   flex: 0 0 auto; width: 22px; height: 22px; border-radius: 999px; display: grid; place-items: center;
   font-size: 12px; font-weight: 700; background: #EEF3F7; color: var(--tcd-muted);
 }
-.tcd-step__k { font-size: 13px; line-height: 1.35; color: var(--tcd-muted); }
-.tcd-step.is-done .tcd-step__n { background: var(--tcd-brand); color: #fff; }
-.tcd-step.is-done .tcd-step__k { color: var(--tcd-ink); font-weight: 600; }
-.tcd-step.is-now .tcd-step__n { background: var(--tcd-accent); color: #3A2900; box-shadow: 0 0 0 3px rgba(255, 201, 60, .38); }
-.tcd-step.is-now .tcd-step__k { color: var(--tcd-ink); font-weight: 700; }
+.tcd-trackstep__k { font-size: 13px; line-height: 1.35; color: var(--tcd-muted); }
+.tcd-trackstep.is-done .tcd-trackstep__n { background: var(--tcd-brand); color: #fff; }
+.tcd-trackstep.is-done .tcd-trackstep__k { color: var(--tcd-ink); font-weight: 600; }
+.tcd-trackstep.is-now .tcd-trackstep__n { background: var(--tcd-accent); color: #3A2900; box-shadow: 0 0 0 3px rgba(255, 201, 60, .38); }
+.tcd-trackstep.is-now .tcd-trackstep__k { color: var(--tcd-ink); font-weight: 700; }
 
 .tcd-result__notice {
   display: flex; gap: 10px; align-items: flex-start; padding: 12px 20px;

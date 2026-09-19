@@ -1,4 +1,4 @@
-// TCD EXPRESS · Cloudflare Worker
+// TC EXPRESS · Cloudflare Worker
 // Static site is served by the ASSETS binding.
 // /api/track reads only the logistics fields needed from a private Google Sheet.
 // Recipient and cargo columns are deliberately NOT fetched.

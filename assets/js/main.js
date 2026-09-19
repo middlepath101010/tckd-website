@@ -1,5 +1,5 @@
 /* ==========================================================================
-   同城快递 TCD EXPRESS · 全站交互脚本
+   同城快递 TC EXPRESS · 全站交互脚本
    1) 中英双语切换（记忆在 localStorage；仅切换 <html lang>，文字由 CSS 控制显隐）
    2) 移动端导航开合
    3) 页头滚动加深阴影
@@ -36,8 +36,11 @@
   }
 
   function initLang() {
-    var saved = 'zh';
-    try { saved = localStorage.getItem(LANG_KEY) || 'zh'; } catch (e) { /* 隐私模式忽略 */ }
+    // 默认语言取页面自身声明的 data-lang（中文页=zh，英文页=en），
+    // 避免英文页被硬编码默认值强制切回中文（会影响 Googlebot 渲染）。
+    var htmlEl = document.documentElement;
+    var saved = htmlEl.getAttribute('data-lang') || 'zh';
+    try { saved = localStorage.getItem(LANG_KEY) || saved; } catch (e) { /* 隐私模式忽略 */ }
     applyLang(saved);
 
     document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
@@ -384,12 +387,12 @@
             }
           }
 
-          // 已分配 TCD 运单号的票，顺带提示客户这个号（未分配时不显示）
+          // 已分配 TC 运单号的票，顺带提示客户这个号（未分配时不显示）
           if (noticeEl) {
             if (d.tcd_no) {
               noticeEl.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>' +
-                '<span class="t-zh">您的 TCD 运单号已生成：<strong>' + esc(d.tcd_no) + '</strong>。以下为物流状态。</span>' +
-                '<span class="t-en">Your TCD tracking number is <strong>' + esc(d.tcd_no) + '</strong>. Below is the logistics status.</span>' +
+                '<span class="t-zh">您的 TC 运单号已生成：<strong>' + esc(d.tcd_no) + '</strong>。以下为物流状态。</span>' +
+                '<span class="t-en">Your TC tracking number is <strong>' + esc(d.tcd_no) + '</strong>. Below is the logistics status.</span>' +
                 '</span>';
               noticeEl.hidden = false;
             } else {
