@@ -8,7 +8,11 @@ import sys
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-PAGES = ["index.html", "query.html", "process.html", "about.html", "faq.html", "contact.html"]
+PAGES = ["index.html", "query.html", "process.html", "pricing.html", "about.html", "faq.html", "contact.html"]
+# query.html（在线查询）自 2026-09-19 起撤掉了公开入口：页头导航、移动菜单、页脚
+# 站点地图都不再链向它，只保留页面本身供内部访问。因此它不参与「每页都要互链」
+# 的检查，否则会一直误报「缺少指向 query.html 的链接」。
+NO_PUBLIC_ENTRY = {"query.html"}
 
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta",
         "param", "source", "track", "wbr"}
@@ -197,7 +201,9 @@ for page in PAGES:
         continue
     raw = open(path, encoding="utf-8").read()
     for other in PAGES:
-        if other != page and ('href="%s"' % other) not in raw:
+        if other == page or other in NO_PUBLIC_ENTRY:
+            continue
+        if ('href="%s"' % other) not in raw:
             problems.append("%s: 缺少指向 %s 的链接" % (page, other))
 
 print("检查页面：%s" % ", ".join(PAGES))
